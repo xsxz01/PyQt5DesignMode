@@ -18,50 +18,58 @@ class Ui_MainWindow(object):
         MainWindow.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(480, 130, 331, 281))
-        self.label.setMaximumSize(QtCore.QSize(331, 16777215))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/test/user.jpg"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(100, 210, 271, 131))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(230, 80, 441, 361))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem)
-        self.formLayout = QtWidgets.QFormLayout()
-        self.formLayout.setObjectName("formLayout")
-        self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_2.setObjectName("label_2")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_2)
-        self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.label_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_3.setObjectName("label_3")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_3)
-        self.lineEdit_username = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit_username.setObjectName("lineEdit_username")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_username)
-        self.lineEdit_password = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit_password.setObjectName("lineEdit_password")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_password)
-        self.verticalLayout.addLayout(self.formLayout)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.verticalLayout.addItem(spacerItem1)
-        self.pushButton_login = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.pushButton_login.setObjectName("pushButton_login")
-        self.verticalLayout.addWidget(self.pushButton_login)
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(90, 50, 681, 61))
-        self.label_4.setStyleSheet("font: 36pt \"黑体\";\n"
-"color:rgb(255, 0, 0);\n"
-"border-radius:5px;")
-        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_4.setObjectName("label_4")
+        self.label = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label.setStyleSheet("color:rgb(255, 0, 0);\n"
+"font: 36pt \"黑体\";")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.pushButton_insert = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_insert.setStyleSheet("background-color:#FFFFFF;\n"
+"height:40px;\n"
+"font: 25 18pt \"等线 Light\";\n"
+"border:1px solid #00FF00;\n"
+"border-radius:25px;")
+        self.pushButton_insert.setObjectName("pushButton_insert")
+        self.verticalLayout.addWidget(self.pushButton_insert)
+        self.pushButton_train = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_train.setStyleSheet("background-color:#FFFFFF;\n"
+"height:40px;\n"
+"font: 25 18pt \"等线 Light\";\n"
+"border:1px solid #00FF00;\n"
+"border-radius:25px;")
+        self.pushButton_train.setObjectName("pushButton_train")
+        self.verticalLayout.addWidget(self.pushButton_train)
+        self.pushButton_run = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_run.setStyleSheet("background-color:#FFFFFF;\n"
+"height:40px;\n"
+"font: 25 18pt \"等线 Light\";\n"
+"border:1px solid #00FF00;\n"
+"border-radius:25px;")
+        self.pushButton_run.setObjectName("pushButton_run")
+        self.verticalLayout.addWidget(self.pushButton_run)
+        self.pushButton_simple = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_simple.setStyleSheet("background-color:#FFFFFF;\n"
+"height:40px;\n"
+"font: 25 18pt \"等线 Light\";\n"
+"border:1px solid #00FF00;\n"
+"border-radius:25px;")
+        self.pushButton_simple.setObjectName("pushButton_simple")
+        self.verticalLayout.addWidget(self.pushButton_simple)
+        self.pushButton_multiple = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_multiple.setStyleSheet("background-color:#FFFFFF;\n"
+"height:40px;\n"
+"font: 25 18pt \"等线 Light\";\n"
+"border:1px solid #00FF00;\n"
+"border-radius:25px;")
+        self.pushButton_multiple.setObjectName("pushButton_multiple")
+        self.verticalLayout.addWidget(self.pushButton_multiple)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 898, 26))
@@ -76,9 +84,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PyQt5 学习"))
-        self.label_2.setText(_translate("MainWindow", "账号："))
-        self.label_3.setText(_translate("MainWindow", "密码："))
-        self.pushButton_login.setText(_translate("MainWindow", "登录"))
-        self.label_4.setText(_translate("MainWindow", "欢迎使用素描图象生成器"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "考勤"))
+        self.label.setText(_translate("MainWindow", "主界面"))
+        self.pushButton_insert.setText(_translate("MainWindow", "录入数据"))
+        self.pushButton_train.setText(_translate("MainWindow", "训练数据"))
+        self.pushButton_run.setText(_translate("MainWindow", "开始考勤"))
+        self.pushButton_simple.setText(_translate("MainWindow", "单人考勤"))
+        self.pushButton_multiple.setText(_translate("MainWindow", "多人考勤"))
 import testRes_rc
