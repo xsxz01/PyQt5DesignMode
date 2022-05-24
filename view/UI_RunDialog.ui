@@ -6,45 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>746</width>
-    <height>447</height>
+    <width>1064</width>
+    <height>918</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>开始考勤</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>309</width>
-     <height>33</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
-      </property>
-      <property name="text">
-       <string>考勤状态：</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="styleSheet">
-       <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
-      </property>
-      <property name="text">
-       <string>未开始</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
@@ -132,8 +100,8 @@
   <widget class="QPushButton" name="pushButton_start">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>240</y>
+     <x>780</x>
+     <y>20</y>
      <width>251</width>
      <height>81</height>
     </rect>
@@ -149,35 +117,88 @@ border-radius:25px;</string>
     <string>开始</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget_2">
+  <widget class="QLabel" name="label_cap">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>10</y>
-     <width>309</width>
-     <height>33</height>
+     <x>120</x>
+     <y>100</y>
+     <width>800</width>
+     <height>800</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_6">
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>701</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
     <item>
-     <widget class="QLabel" name="label_9">
-      <property name="styleSheet">
-       <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
-      </property>
-      <property name="text">
-       <string>考勤次数：</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>137</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
+        </property>
+        <property name="text">
+         <string>考勤状态：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
+        </property>
+        <property name="text">
+         <string>未开始</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
-     <widget class="QLabel" name="label_10">
-      <property name="styleSheet">
-       <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
-      </property>
-      <property name="text">
-       <string>未开始</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="maximumSize">
+         <size>
+          <width>137</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
+        </property>
+        <property name="text">
+         <string>考勤次数：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="styleSheet">
+         <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
+        </property>
+        <property name="text">
+         <string>未开始</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

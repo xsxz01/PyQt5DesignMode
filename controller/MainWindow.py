@@ -18,6 +18,7 @@ class MainWindow(QMainWindow, UI_MainWindow.Ui_MainWindow):
         self.pushButton_multiple.clicked.connect(self.clicked_button_mutiple)
         self.pushButton_multiple.setHidden(True)
         self.pushButton_insert.clicked.connect(self.clicked_button_insert)
+        self.pushButton_train.setHidden(True)
 
     def clicked_button_run(self):
         self.run = RunDialog()
@@ -36,7 +37,7 @@ class MainWindow(QMainWindow, UI_MainWindow.Ui_MainWindow):
         self.insert.show()
 
     def closeEvent(self, event):
-        reply = QMessageBox.question(self, '警告', '<font color=red><b>窗口关闭后，将终止本次运行</b></font>',
+        reply = QMessageBox.question(self, '警告', '<font size=16 face='+'等线 Light'+' color=red><b>窗口关闭后，将终止本次运行</b></font>',
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:

@@ -85,12 +85,16 @@ border-radius:25px;</string>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_simple">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color:#FFFFFF;
 height:40px;
 font: 25 18pt &quot;等线 Light&quot;;
 border:1px solid #00FF00;
-border-radius:25px;</string>
+border-radius:25px;
+</string>
        </property>
        <property name="text">
         <string>单人考勤</string>
