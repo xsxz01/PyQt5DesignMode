@@ -68,6 +68,28 @@ class Ui_Run_Dialog(object):
         self.label_8.setObjectName("label_8")
         self.horizontalLayout_4.addWidget(self.label_8)
         self.horizontalLayout_5.addLayout(self.horizontalLayout_4)
+        self.pushButton_start = QtWidgets.QPushButton(Run_Dialog)
+        self.pushButton_start.setGeometry(QtCore.QRect(240, 240, 251, 81))
+        self.pushButton_start.setStyleSheet("background-color:#FFFFFF;\n"
+"height:40px;\n"
+"font: 25 18pt \"等线 Light\";\n"
+"border:1px solid #00FF00;\n"
+"border-radius:25px;")
+        self.pushButton_start.setObjectName("pushButton_start")
+        self.layoutWidget_2 = QtWidgets.QWidget(Run_Dialog)
+        self.layoutWidget_2.setGeometry(QtCore.QRect(350, 10, 309, 33))
+        self.layoutWidget_2.setObjectName("layoutWidget_2")
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.layoutWidget_2)
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.label_9 = QtWidgets.QLabel(self.layoutWidget_2)
+        self.label_9.setStyleSheet("font: 25 18pt \"等线 Light\";")
+        self.label_9.setObjectName("label_9")
+        self.horizontalLayout_6.addWidget(self.label_9)
+        self.label_10 = QtWidgets.QLabel(self.layoutWidget_2)
+        self.label_10.setStyleSheet("font: 25 18pt \"等线 Light\";")
+        self.label_10.setObjectName("label_10")
+        self.horizontalLayout_6.addWidget(self.label_10)
 
         self.retranslateUi(Run_Dialog)
         QtCore.QMetaObject.connectSlotsByName(Run_Dialog)
@@ -83,3 +105,6 @@ class Ui_Run_Dialog(object):
         self.label_6.setText(_translate("Run_Dialog", "50人"))
         self.label_7.setText(_translate("Run_Dialog", "未到："))
         self.label_8.setText(_translate("Run_Dialog", "0人"))
+        self.pushButton_start.setText(_translate("Run_Dialog", "开始"))
+        self.label_9.setText(_translate("Run_Dialog", "考勤次数："))
+        self.label_10.setText(_translate("Run_Dialog", "未开始"))

@@ -49,20 +49,7 @@ font: 36pt &quot;黑体&quot;;</string>
     <string>考勤记录</string>
    </property>
   </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>220</y>
-     <width>701</width>
-     <height>231</height>
-    </rect>
-   </property>
-   <property name="alternatingRowColors">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -225,6 +212,16 @@ font: 36pt &quot;黑体&quot;;</string>
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>230</y>
+     <width>701</width>
+     <height>221</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <resources/>
