@@ -65,7 +65,7 @@ border:1px solid #00FF00;
 border-radius:25px;</string>
        </property>
        <property name="text">
-        <string>训练数据</string>
+        <string>用户数据</string>
        </property>
       </widget>
      </item>
@@ -97,7 +97,7 @@ border-radius:25px;
 </string>
        </property>
        <property name="text">
-        <string>单人考勤</string>
+        <string>考勤记录</string>
        </property>
       </widget>
      </item>

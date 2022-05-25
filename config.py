@@ -93,9 +93,22 @@ def coka_select_by_turn(turn):
     return result
 
 
+# 获取所有考勤的记录
+def coka_select_all():
+    connection = get_connection()
+    cursor = connection.cursor()
+    sql = f"SELECT *  FROM sys_coka"
+    cursor.execute(sql)
+    result = cursor.fetchall()
+    cursor.close()
+    connection.close()
+    return result
+
+
 if __name__ == '__main__':
     # 测试
-    print(get_connection())
+    # print(get_connection())
     # user_insert("庞宇宇", "运城学院")
     # coka_insert(8001,dt.datetime.now().isoformat(),1)\
     # print(coka_select_by_turn(1))
+    print(coka_select_all())

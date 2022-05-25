@@ -55,11 +55,13 @@ class Ui_MainWindow(object):
         self.pushButton_run.setObjectName("pushButton_run")
         self.verticalLayout.addWidget(self.pushButton_run)
         self.pushButton_simple = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.pushButton_simple.setEnabled(True)
         self.pushButton_simple.setStyleSheet("background-color:#FFFFFF;\n"
 "height:40px;\n"
 "font: 25 18pt \"等线 Light\";\n"
 "border:1px solid #00FF00;\n"
-"border-radius:25px;")
+"border-radius:25px;\n"
+"")
         self.pushButton_simple.setObjectName("pushButton_simple")
         self.verticalLayout.addWidget(self.pushButton_simple)
         self.pushButton_multiple = QtWidgets.QPushButton(self.verticalLayoutWidget)
@@ -87,8 +89,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "考勤"))
         self.label.setText(_translate("MainWindow", "主界面"))
         self.pushButton_insert.setText(_translate("MainWindow", "录入数据"))
-        self.pushButton_train.setText(_translate("MainWindow", "训练数据"))
+        self.pushButton_train.setText(_translate("MainWindow", "用户数据"))
         self.pushButton_run.setText(_translate("MainWindow", "开始考勤"))
-        self.pushButton_simple.setText(_translate("MainWindow", "单人考勤"))
+        self.pushButton_simple.setText(_translate("MainWindow", "考勤记录"))
         self.pushButton_multiple.setText(_translate("MainWindow", "多人考勤"))
 import testRes_rc

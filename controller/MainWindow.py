@@ -2,9 +2,11 @@ from PyQt5.QtWidgets import QMainWindow, QMessageBox
 
 import UI_MainWindow
 from Insert_Dialog import Insert_Dialog
+from KaoQin_Dialog import KaoQin_Dialog
 from Mutiple_dialog import Muitiple_Dialog
 from RunDialog import RunDialog
 from Simple_Dialog import Simple_Dialog
+from User_Dialog import User_Dialog
 
 
 class MainWindow(QMainWindow, UI_MainWindow.Ui_MainWindow):
@@ -14,19 +16,22 @@ class MainWindow(QMainWindow, UI_MainWindow.Ui_MainWindow):
         # 连接所有按钮事件
         self.pushButton_run.clicked.connect(self.clicked_button_run)
         self.pushButton_simple.clicked.connect(self.clicked_button_simple)
-        self.pushButton_simple.setHidden(True)
+        # self.pushButton_simple.setHidden(True)
         self.pushButton_multiple.clicked.connect(self.clicked_button_mutiple)
         self.pushButton_multiple.setHidden(True)
         self.pushButton_insert.clicked.connect(self.clicked_button_insert)
-        self.pushButton_train.setHidden(True)
+        # self.pushButton_train.setHidden(True)
+        self.pushButton_train.clicked.connect(self.clicked_button_train)
 
     def clicked_button_run(self):
         self.run = RunDialog()
         self.run.show()
 
     def clicked_button_simple(self):
-        self.simple = Simple_Dialog()
-        self.simple.show()
+        self.training = KaoQin_Dialog()
+        self.training.show()
+        # self.simple = Simple_Dialog()
+        # self.simple.show()
 
     def clicked_button_mutiple(self):
         self.multiple = Muitiple_Dialog()
@@ -35,6 +40,10 @@ class MainWindow(QMainWindow, UI_MainWindow.Ui_MainWindow):
     def clicked_button_insert(self):
         self.insert = Insert_Dialog()
         self.insert.show()
+
+    def clicked_button_train(self):
+        self.training = User_Dialog()
+        self.training.show()
 
     def closeEvent(self, event):
         reply = QMessageBox.question(self, '警告', '<font size=16 face='+'等线 Light'+' color=red><b>窗口关闭后，将终止本次运行</b></font>',
