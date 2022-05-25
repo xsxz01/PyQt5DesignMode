@@ -173,7 +173,8 @@ class RunDialog(UI_RunDialog.Ui_Run_Dialog, QMainWindow):
 
     def closeEvent(self, event):
         cap = self.cap_property
-        # 释放摄像头
-        cap.release()
+        if cap :
+            # 释放摄像头
+            cap.release()
         # 继续执行关闭
         event.accept()

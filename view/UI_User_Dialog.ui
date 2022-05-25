@@ -38,7 +38,74 @@ font: 28pt &quot;黑体&quot;;</string>
      </widget>
     </item>
     <item>
-     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QTableWidget" name="tableWidget">
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>195</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>50</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>名字</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>学号</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>院系</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>操作</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+     </widget>
     </item>
    </layout>
   </widget>
