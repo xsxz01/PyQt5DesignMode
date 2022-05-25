@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMainWindow, QAbstractItemView, QTableWidgetItem, QW
     QMessageBox
 import UI_KaoQin_Dialog
 import config
+from Result_Dialog import Result_Dialog
 
 
 class KaoQin_Dialog(UI_KaoQin_Dialog.Ui_KaoQin_Dialog, QMainWindow):
@@ -20,26 +21,25 @@ class KaoQin_Dialog(UI_KaoQin_Dialog.Ui_KaoQin_Dialog, QMainWindow):
         # 禁止编辑表格
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         # 加载数据
-        data = config.coka_select_all()
-        self.tableWidget.setRowCount(len(data))
-        for row in range(len(data)):
-            item1 = QTableWidgetItem(str(data[row][0]))
-            self.tableWidget.setItem(row, 0, item1)
-            item2 = QTableWidgetItem(str(data[row][3]))
-            self.tableWidget.setItem(row, 1, item2)
-            item3 = QTableWidgetItem(str(data[row][2]))
-            self.tableWidget.setItem(row, 2, item3)
-            # 添加按钮
-            item4 = self.btn_for_row(data[row][0])
-            self.tableWidget.setCellWidget(row, 3, item4)
+        self.get_data()
 
     def clicked_cell_btn_view(self, id):
-        # print(id)
-        QMessageBox.information(self, '提示', str(id))
+        data = config.coka_select_by_turn(id)[0]
+        self.view = Result_Dialog(data[1], data[2])
+        self.view.show()
 
     def clicked_cell_btn_delete(self, id):
         # print(id)
-        QMessageBox.information(self, '提示', str(id))
+        reply = QMessageBox.question(self, '警告',
+                                     '<font size=16 face=' + '等线 Light' + ' color=red><b>你确定要删除本条记录？</b></font>',
+                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            config.coka_delete_by_id(id)
+            # 这里应该要刷新表格
+            self.tableWidget.clearContents()
+            self.get_data()
+        else:
+            return
 
     # 生成表格所需要用到的按钮
     def btn_for_row(self, id):
@@ -60,3 +60,17 @@ class KaoQin_Dialog(UI_KaoQin_Dialog.Ui_KaoQin_Dialog, QMainWindow):
         h_layout.addWidget(delete_btn)
         widget.setLayout(h_layout)
         return widget
+
+    def get_data(self):
+        data = config.coka_select_all()
+        self.tableWidget.setRowCount(len(data))
+        for row in range(len(data)):
+            item1 = QTableWidgetItem(str(data[row][0]))
+            self.tableWidget.setItem(row, 0, item1)
+            item2 = QTableWidgetItem(str(data[row][3]))
+            self.tableWidget.setItem(row, 1, item2)
+            item3 = QTableWidgetItem(str(data[row][2]))
+            self.tableWidget.setItem(row, 2, item3)
+            # 添加按钮
+            item4 = self.btn_for_row(data[row][0])
+            self.tableWidget.setCellWidget(row, 3, item4)

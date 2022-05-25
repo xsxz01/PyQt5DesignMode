@@ -85,12 +85,27 @@ def coka_get_max_turn():
 def coka_select_by_turn(turn):
     connection = get_connection()
     cursor = connection.cursor()
-    sql = f"SELECT sys_coka.id AS id, sys_user.sname AS sname, sys_user.college AS college, sys_coka.time AS stime  FROM sys_user, sys_coka WHERE sys_coka.uid=sys_user.id AND sys_coka.turn=%s"
+    sql = f"SELECT * FROM sys_coka WHERE sys_coka.turn = %s"
     cursor.execute(sql, [turn])
     result = cursor.fetchall()
     cursor.close()
     connection.close()
     return result
+
+
+def coka_delete_by_id(id):
+    connection = get_connection()
+    cursor = connection.cursor()
+    sql = f"DELETE FROM sys_coka where sys_coka.id = %s"
+    try:
+        cursor.execute(sql, [id])
+        connection.commit()
+    except Exception as e:
+        print("操作失败", e)
+        connection.rollback()
+    finally:
+        cursor.close()
+        connection.close()
 
 
 # 获取所有考勤的记录

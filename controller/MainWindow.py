@@ -46,16 +46,20 @@ class MainWindow(QMainWindow, UI_MainWindow.Ui_MainWindow):
         self.training.show()
 
     def closeEvent(self, event):
-        reply = QMessageBox.question(self, '警告', '<font size=16 face='+'等线 Light'+' color=red><b>窗口关闭后，将终止本次运行</b></font>',
+        reply = QMessageBox.question(self, '警告',
+                                     '<font size=16 face=' + '等线 Light' + ' color=red><b>窗口关闭后，将终止本次运行</b></font>',
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:
             # 依次关闭所有窗口
-            self.insert.close()
-            self.simple.close()
-            self.run.close()
-            self.multiple.close()
+            if self.insert:
+                self.insert.close()
+            if self.simple:
+                self.simple.close()
+            if self.run:
+                self.run.close()
+            if self.multiple:
+                self.multiple.close()
             event.accept()
         else:
             event.ignore()
-
