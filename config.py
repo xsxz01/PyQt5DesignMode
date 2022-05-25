@@ -55,12 +55,12 @@ def user_select_all():
 
 
 # 插入考勤记录
-def coka_insert(uid, time, turn):
+def coka_insert(data, time, turn):
     connection = get_connection()
     cursor = connection.cursor()
-    sql = f"INSERT INTO `face`.`sys_coka` (`uid`, `time`, `turn`) VALUES (%s, %s, %s);"
+    sql = f"INSERT INTO `face`.`sys_coka` (`data`, `time`, `turn`) VALUES (%s, %s, %s);"
     try:
-        cursor.execute(sql, [uid, time, turn])
+        cursor.execute(sql, [data, time, turn])
         connection.commit()
     except Exception as e:
         print("操作失败", e)

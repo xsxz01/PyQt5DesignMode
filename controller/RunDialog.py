@@ -1,11 +1,13 @@
-import cv2
-from PyQt5 import QtCore
-from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.QtWidgets import QMainWindow, QMessageBox
-
+import json
 import UI_RunDialog
 import config
 import face_recognition
+import jsonpickle
+import cv2
+import datetime as dt
+from PyQt5 import QtCore
+from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtWidgets import QMainWindow, QMessageBox
 from KaoQinEntity import KaoQinEntity
 from Result_Dialog import Result_Dialog
 
@@ -66,12 +68,18 @@ class RunDialog(UI_RunDialog.Ui_Run_Dialog, QMainWindow):
                 QMessageBox.information(self, '提示', '考勤已结束，点击确认查看结果')
                 self.result = Result_Dialog(self.kao_qin_entity)
                 self.result.show()
+                # 考勤结束 上传考勤数据
+                jsonData = jsonpickle.encode(self.kao_qin_entity.data)
+                # obj = json.loads(jsonData)
+                # json取值方法
+                # print(obj['all_students']['py/set'])
+                config.coka_insert(jsonData, dt.datetime.now().isoformat(), self.turn[0][0] + 1)
                 self.setHidden(True)
             return
         else:
             # 对step进行控制
             data = config.user_select_all()
-            self.label_4.setText(str(len(data)))
+            self.label_4.setText(str(len(data)) + '人')
             if self.step == -1:
                 self.step = 1
                 self.label_2.setText("正在进行考勤第一轮")
@@ -128,14 +136,16 @@ class RunDialog(UI_RunDialog.Ui_Run_Dialog, QMainWindow):
                     for x in all_students:
                         # 识别到考勤人员
                         if x[2] == str(id):
-                            if self.step == 1:      # 第一轮
+                            if self.step == 1:  # 第一轮
                                 self.turn1_signed_students.add(x[1])
                                 self.label_6.setText(str(len(self.turn1_signed_students)) + '人')
-                                self.label_8.setText(str(len(self.kao_qin_entity.data['turn1']['unsigned_students'])) + '人')
-                            elif self.step == 3:    # 第二轮
+                                self.label_8.setText(
+                                    str(len(self.kao_qin_entity.data['turn1']['unsigned_students'])) + '人')
+                            elif self.step == 3:  # 第二轮
                                 self.turn2_signed_students.add(x[1])
                                 self.label_6.setText(str(len(self.turn2_signed_students)) + '人')
-                                self.label_8.setText(str(len(self.kao_qin_entity.data['turn2']['unsigned_students'])) + '人')
+                                self.label_8.setText(
+                                    str(len(self.kao_qin_entity.data['turn2']['unsigned_students'])) + '人')
                             name_str = x[2]
                             # 先判断是否打卡 根据轮次获取本轮所有的考勤信息
                             # 没打卡   数据库存入一条打卡的信息
@@ -149,12 +159,6 @@ class RunDialog(UI_RunDialog.Ui_Run_Dialog, QMainWindow):
                 last_student = ''
                 if len(set(student_list)) > 0:
                     last_student = student_list[len(student_list) - 1]
-
-                # cv2.putText(img, 'Current People Num: ' + str(len(set(student_list))), (10, 20), font, 0.6, (0, 255, 0),
-                #             1)
-                # cv2.putText(img, 'Last Person: ' + last_student, (10, 40), font, 0.6, (0, 255, 0), 1)
-                # cv2.putText(img, 'Current Student List: [' + student_list_str + ']', (10, 60), font, 0.6, (0, 255, 0),
-                #             1)
                 cv2.putText(img, 'Current Student ID: ' + str(current_id), (10, 80), font, 0.6, (0, 255, 0), 1)
 
                 # cv2.imshow('Recognition', img)

@@ -52,10 +52,18 @@ color:rgb(255, 0, 0);</string>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QListWidget" name="listWidget_turn2_signed"/>
+     <widget class="QListWidget" name="listWidget_turn2_signed">
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;等线 Light&quot;;</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QListWidget" name="listWidget_turn2_unsigned"/>
+     <widget class="QListWidget" name="listWidget_turn2_unsigned">
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;等线 Light&quot;;</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -98,10 +106,19 @@ color:rgb(255, 0, 0);</string>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QListWidget" name="listWidget_turn1_signed"/>
+     <widget class="QListWidget" name="listWidget_turn1_signed">
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;等线 Light&quot;;
+text-align:center;</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QListWidget" name="listWidget_turn1_unsigned"/>
+     <widget class="QListWidget" name="listWidget_turn1_unsigned">
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;等线 Light&quot;;</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -271,13 +288,25 @@ color:rgb(255, 0, 0);</string>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QListWidget" name="listWidget_confirm_signed"/>
+     <widget class="QListWidget" name="listWidget_confirm_signed">
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;等线 Light&quot;;</string>
+      </property>
+     </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QListWidget" name="listWidget_might_signed"/>
+     <widget class="QListWidget" name="listWidget_might_signed">
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;等线 Light&quot;;</string>
+      </property>
+     </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QListWidget" name="listWidget_unsigned"/>
+     <widget class="QListWidget" name="listWidget_unsigned">
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;等线 Light&quot;;</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
