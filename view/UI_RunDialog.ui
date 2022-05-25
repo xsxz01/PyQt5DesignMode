@@ -41,7 +41,7 @@
          <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
         </property>
         <property name="text">
-         <string>50人</string>
+         <string>~人</string>
         </property>
        </widget>
       </item>
@@ -65,7 +65,7 @@
          <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
         </property>
         <property name="text">
-         <string>50人</string>
+         <string>~人</string>
         </property>
        </widget>
       </item>
@@ -89,7 +89,7 @@
          <string notr="true">font: 25 18pt &quot;等线 Light&quot;;</string>
         </property>
         <property name="text">
-         <string>0人</string>
+         <string>~人</string>
         </property>
        </widget>
       </item>
@@ -130,7 +130,7 @@ border-radius:25px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
