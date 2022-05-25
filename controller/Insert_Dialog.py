@@ -10,6 +10,7 @@ class Insert_Dialog(UI_Insert_Dialog.Ui_Insert_Dialog, QMainWindow):
         super(UI_Insert_Dialog.Ui_Insert_Dialog, self).__init__()
         self.setupUi(self)
         self.pushButton.clicked.connect(self.start)
+        self.pushButton_2.setHidden(True)
 
     def start(self):
         sname = self.lineEdit.text()
