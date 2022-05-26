@@ -1,12 +1,12 @@
 from PyQt5.QtWidgets import QMainWindow, QMessageBox
 
-import UI_MainWindow
-from Insert_Dialog import Insert_Dialog
-from KaoQin_Dialog import KaoQin_Dialog
-from Mutiple_dialog import Muitiple_Dialog
-from RunDialog import RunDialog
-from Simple_Dialog import Simple_Dialog
-from User_Dialog import User_Dialog
+from view import UI_MainWindow
+
+from controller.Insert_Dialog import Insert_Dialog
+from controller.KaoQin_Dialog import KaoQin_Dialog
+from controller.Mutiple_dialog import Muitiple_Dialog
+from controller.RunDialog import RunDialog
+from controller.User_Dialog import User_Dialog
 
 
 class MainWindow(QMainWindow, UI_MainWindow.Ui_MainWindow):

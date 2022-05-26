@@ -9,7 +9,7 @@
 
 import face_recognition
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 
 
 class Ui_Form(object):

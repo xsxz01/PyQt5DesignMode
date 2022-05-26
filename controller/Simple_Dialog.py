@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QMainWindow, QHeaderView, QTableWidget
+from PyQt5.QtWidgets import QMainWindow
 
-import UI_Simple_Dialog
+from view import UI_Simple_Dialog
 
 
 class Simple_Dialog(UI_Simple_Dialog.Ui_Simple_Dialog, QMainWindow):

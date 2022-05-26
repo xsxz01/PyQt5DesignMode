@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QMainWindow, QMessageBox
 
-import UI_Insert_Dialog
+from view import UI_Insert_Dialog
 import config
-import face_recognition
+from service.face import face_recognition
 
 
 class Insert_Dialog(UI_Insert_Dialog.Ui_Insert_Dialog, QMainWindow):

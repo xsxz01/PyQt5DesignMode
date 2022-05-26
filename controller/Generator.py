@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QMainWindow
 
-import UI_Generator
+from view import UI_Generator
 
 
 class Generator(UI_Generator.Ui_Generator_Dialog, QMainWindow):

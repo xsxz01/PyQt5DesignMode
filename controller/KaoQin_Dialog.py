@@ -1,9 +1,9 @@
-from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QMainWindow, QAbstractItemView, QTableWidgetItem, QWidget, QPushButton, QHBoxLayout, \
     QMessageBox
-import UI_KaoQin_Dialog
+
+from view import UI_KaoQin_Dialog
 import config
-from Result_Dialog import Result_Dialog
+from controller.Result_Dialog import Result_Dialog
 
 
 class KaoQin_Dialog(UI_KaoQin_Dialog.Ui_KaoQin_Dialog, QMainWindow):

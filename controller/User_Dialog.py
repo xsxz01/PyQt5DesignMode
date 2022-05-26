@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QMainWindow, QAbstractItemView, QTableWidgetItem, QWidget, QPushButton, QHBoxLayout, \
     QMessageBox
-import UI_User_Dialog
+from view import UI_User_Dialog
 import config
-from User_Alter_Dialog import User_Alter_Dialog
+from controller.User_Alter_Dialog import User_Alter_Dialog
 
 
 class User_Dialog(UI_User_Dialog.Ui_User_Dialog, QMainWindow):

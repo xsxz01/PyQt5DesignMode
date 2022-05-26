@@ -1,8 +1,6 @@
-import _signal
-
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QMainWindow
-import UI_User_Alter_Dialog
+from view import UI_User_Alter_Dialog
 import config
 
 

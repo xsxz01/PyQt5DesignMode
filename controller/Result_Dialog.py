@@ -1,7 +1,8 @@
 import json
 
 from PyQt5.QtWidgets import QMainWindow
-import UI_Result_Dialog
+
+from view import UI_Result_Dialog
 
 
 class Result_Dialog(UI_Result_Dialog.Ui_Result_Dialog, QMainWindow):

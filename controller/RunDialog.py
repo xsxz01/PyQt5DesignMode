@@ -1,15 +1,14 @@
-import json
-import UI_RunDialog
+from view import UI_RunDialog
 import config
-import face_recognition
+from service.face import face_recognition
 import jsonpickle
 import cv2
 import datetime as dt
 from PyQt5 import QtCore
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QMainWindow, QMessageBox
-from KaoQinEntity import KaoQinEntity
-from Result_Dialog import Result_Dialog
+from entity.KaoQinEntity import KaoQinEntity
+from controller.Result_Dialog import Result_Dialog
 
 
 class RunDialog(UI_RunDialog.Ui_Run_Dialog, QMainWindow):
